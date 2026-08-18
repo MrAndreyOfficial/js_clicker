@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="clicker">
+        <div class="state-info">
+            <p id="score-info">Score - 0</p>
+            <p id="click-power-info">Click power - 1</p>
+        </div>
+        <div class="img-wrapper">
+            <img src="imgs/js.png" alt="js" id="js-img" loading="lazy">
+        </div>
+        <div class="shop">
+            <button class="button" id="upgrade-click-power-btn">Upgrade score per click - 15$</button>
+        </div>
+        <div class="button-wrapper">
+            <button class="button" id="reset-btn">Reset</button>
+        </div>
+    </main>
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clicker {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+}
+
+.state-info {
+    text-align: center;
+    font-size: 24px;
+}
+
+.button {
+    border: none;
+    outline: none;
+    font-size: 21px;
+    padding: 12px;
+    border-radius: 12px;
+    transition: 200ms;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+#reset-btn {
+    background-color: red;
+    color: white;
+}
+
+#reset-btn:hover {
+    background-color: darkred;
+}
+
+#js-img {
+    border-radius: 12px;
+    width: 240px;
+    transition: 90ms;
+    cursor: pointer;
+}
+
+#js-img:active {
+    width: 220px;
+    transform: scale(0.9);
+}
