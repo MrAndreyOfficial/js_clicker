@@ -6,3 +6,5 @@ Clicker made in HTML, CSS and vanilla JavaScript
 3. Info about game state
 
 ![game](./imgs/game.png)
+
+[DEMO](https://mrandreyofficial.github.io/js_clicker/)
