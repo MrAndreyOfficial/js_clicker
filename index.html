@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Clicker</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
 </head>
 <body>
     <main class="clicker">
         <div class="state-info">
             <p id="score-info">Score - 0</p>
             <p id="click-power-info">Click power - 1</p>
+            <p id="passive-income-info">Passive income - 0</p>
         </div>
         <div class="img-wrapper">
             <img src="imgs/js.png" alt="js" id="js-img" loading="lazy">
         </div>
         <div class="shop">
             <button class="button" id="upgrade-click-power-btn">Upgrade score per click - 15$</button>
+        </div>
+        <div class="shop">
+            <button class="button" id="upgrade-passive-income-btn">Upgrade passive income - 150$</button>
         </div>
         <div class="button-wrapper">
             <button class="button" id="reset-btn">Reset</button>

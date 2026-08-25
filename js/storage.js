@@ -1,18 +1,32 @@
-const scoreName = 'score';
-const clickPowerName = 'click-power';
-const clickUpgradeCostName = 'clickUpgradeCost';
-const clickUpgradeLevelName = 'clclickUpgradeLevelwer';
+const scoreKey = 'score';
+const clickPowerKey = 'clickPower';
+const clickUpgradeCostKey = 'clickUpgradeCost';
+const clickUpgradeLevelKey = 'clickUpgradeLevel';
+
+const passiveIncomeKey = 'passiveIncome';
+const passiveIncomeCostKey = 'passiveIncomeCost';
+const passiveIncomeLevelKey = 'passiveIncomeLevel';
 
 export function saveGame(state) {
-    localStorage.setItem(scoreName, state.score);
-    localStorage.setItem(clickPowerName, state.clickPower);
-    localStorage.setItem(clickUpgradeCostName, state.clickUpgradeCost);
-    localStorage.setItem(clickUpgradeLevelName, state.clickUpgradeLevel);
+    localStorage.setItem(scoreKey, state.score);
+    localStorage.setItem(clickPowerKey, state.clickPower);
+
+    localStorage.setItem(clickUpgradeCostKey, state.clickUpgradeCost);
+    localStorage.setItem(clickUpgradeLevelKey, state.clickUpgradeLevel);
+
+    localStorage.setItem(passiveIncomeKey, state.passiveIncome);
+    localStorage.setItem(passiveIncomeCostKey, state.passiveIncomeCost);
+    localStorage.setItem(passiveIncomeLevelKey, state.passiveIncomeLevel);
 }
 
 export function loadGame(state) {
-    state.score = parseInt(localStorage.getItem(scoreName)) || 0;
-    state.clickPower = parseInt(localStorage.getItem(clickPowerName))  || 1;
-    state.clickUpgradeCost = parseInt(localStorage.getItem(clickUpgradeCostName)) || 15;
-    state.clickUpgradeLevel = parseInt(localStorage.getItem(clickUpgradeLevelName)) || 0;
+    state.score = parseInt(localStorage.getItem(scoreKey)) || 0;
+    state.clickPower = parseInt(localStorage.getItem(clickPowerKey))  || 1;
+
+    state.clickUpgradeCost = parseInt(localStorage.getItem(clickUpgradeCostKey)) || 15;
+    state.clickUpgradeLevel = parseInt(localStorage.getItem(clickUpgradeLevelKey)) || 0;
+
+    state.passiveIncome = parseInt(localStorage.getItem(passiveIncomeKey)) || 0;
+    state.passiveIncomeCostCost = parseInt(localStorage.getItem(passiveIncomeCostKey)) || 150;
+    state.passiveIncomeLevel = parseInt(localStorage.getItem(passiveIncomeLevelKey)) || 0;
 }

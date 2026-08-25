@@ -14,5 +14,18 @@ export function buyClickUpgrade() {
 
     gameState.score -= cost;
     gameState.clickUpgradeLevel++;
-    gameState.clickPower += 1;
+    gameState.clickPower++;
+}
+
+export function tryBuyPassiveIncome() {
+    const cost = calculateCost(gameState.passiveIncomeCost, gameState.passiveIncomeLevel);
+    return gameState.score >= cost;
+}
+
+export function buyPassiveIncome() {
+    const cost = calculateCost(gameState.passiveIncomeCost, gameState.passiveIncomeLevel);
+
+    gameState.score -= cost;
+    gameState.passiveIncomeLevel++;
+    gameState.passiveIncome++;
 }

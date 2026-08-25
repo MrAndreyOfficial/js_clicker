@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', monospace;
+}
+
 .clicker {
     display: flex;
     flex-direction: column;
@@ -15,13 +19,13 @@
 
 .state-info {
     text-align: center;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .button {
     border: none;
     outline: none;
-    font-size: 21px;
+    font-size: 1.3rem;
     padding: 12px;
     border-radius: 12px;
     transition: 200ms;

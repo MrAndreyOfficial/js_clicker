@@ -1,12 +1,14 @@
-import { buyClickUpgrade, tryBuyClickUpgrade, calculateCost } from './game/shop.js';
+import { buyClickUpgrade, tryBuyClickUpgrade, calculateCost, tryBuyPassiveIncome, buyPassiveIncome } from './game/shop.js';
 import { gameState } from './game/state.js';
 import { upgradeUI } from './game/ui.js';
 
 import { loadGame, saveGame } from './storage.js';
 
 const jsImageElement = document.getElementById('js-img');
-const ClickUpgradeBtnElement = document.getElementById('upgrade-click-power-btn');
 const resetBtnElement = document.getElementById('reset-btn');
+
+const clickUpgradeBtnElement = document.getElementById('upgrade-click-power-btn');
+const passiveIncomeBtnElement = document.getElementById('upgrade-passive-income-btn');
 
 document.addEventListener('DOMContentLoaded', init);
 
@@ -26,11 +28,29 @@ function init() {
         upgradeUI(gameState, calculateCost);
     });
 
-    ClickUpgradeBtnElement.addEventListener('click', () => {
+    clickUpgradeBtnElement.addEventListener('click', () => {
         if (tryBuyClickUpgrade()) {
             buyClickUpgrade();
             upgradeUI(gameState, calculateCost);
             saveGame(gameState);
         }
-    })
+    });
+
+    passiveIncomeBtnElement.addEventListener('click', () => {
+        if (tryBuyPassiveIncome()) {
+            buyPassiveIncome();
+            upgradeUI(gameState, calculateCost);
+            saveGame(gameState);
+        }
+    });
+
+    setInterval(() => {
+        const passiveIncome = gameState.passiveIncome;
+
+        if (passiveIncome > 0) {
+            gameState.score += passiveIncome;
+            upgradeUI(gameState, calculateCost);
+            saveGame(gameState);
+        }
+    }, 1000);
 }
