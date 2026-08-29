@@ -6,4 +6,4 @@ export const gameState = {
     passiveIncome: 0,
     passiveIncomeCost: 150,
     passiveIncomeLevel: 0
-}
+};
